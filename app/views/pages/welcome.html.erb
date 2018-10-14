@@ -1,14 +1,14 @@
 <h1>Welcome to Dalia POP!</h1>
 
-<p>Dalia POP! is a platform where Dalia's people can ask questions and gain points giv, ing answers!</p>
+<p>Dalia POP! is a Q&A platform for Dalia's people.</p>
 
 <p>Questions are anonymous. You get rewards for asking, answering, and commenting questions!</p>
 
 
 <% if user_signed_in? %>
-  <p style="margin-top: 2em">Ask a new question!</p>
-  <p style="margin-top: 2em">Browse the categories</p>
+  <button type="button" class="btn btn-primary btn-lg">Ask a new question!</button>
+  <button type="button" class="btn btn-warning btn-lg">Browse the categories</button>
 <% else %>
-  <p style="margin-top: 2em"><%= link_to "Register", new_user_registration_path, class: "btn btn-primary" %></p>
-  <p style="margin-top: 2em">Already registered?<br /><%= link_to "Login", new_user_session_path, class: "btn btn-primary" %></p>
+  <%= link_to "Login", new_user_session_path, class: "btn btn-warning btn-lg" %> or
+  <%= link_to "Register", new_user_registration_path, class: "btn btn-warning btn-lg" %>
 <% end %>

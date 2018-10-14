@@ -1,0 +1,23 @@
+.profile {
+  &__picture {
+    height: rem(100px);
+    width: rem(100px);
+    display: block;
+    border-radius: 100%;
+    background-size: cover !important;
+    background-position: center center !important;
+    &--placeholder {
+      height: rem(100px);
+      width: rem(100px);
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      border-radius: 100%;
+      background: #dcdcdc;
+      color: #a2a1a9;
+      font-size: 3em;
+      font-weight: 100;
+      text-transform: uppercase;
+    }
+  }
+}

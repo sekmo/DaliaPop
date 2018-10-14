@@ -1,0 +1,24 @@
+// general variables
+
+$brand-color-var: #39d0d5;
+$font-size-var: 16px;
+$font-family: 'varela round', 'helvetica neue', arial;
+
+// bootstrap overrides
+
+$brand-primary: $brand-color-var;
+$text-color: #576366;
+$headings-color: #384047;
+$body-bg: #fff;
+$state-success-text: #3c763d;
+$state-success-bg: #f8eb96;
+
+// Breakpoint variables
+
+$mobile: 375px;
+$phablet: 414px;
+$tablet: 600px;
+$tablet-h: 1024px;
+$desktop: 1200px;
+$sd: 1400px;
+$hd: 1920px;
