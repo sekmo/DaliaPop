@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Back', questions_path %>
+
+<h2><%= @question.title %></h2>
+
+<p>
+  Published in <strong><%= @question.category.name %></strong>
+
+  <% if @question.user == current_user %>
+    <%= link_to 'Edit question', edit_question_path(@question) %> |
+    <%= link_to 'Delete question', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</p>
+
+<% if @question.body.present? %>
+  <p>
+    <strong>Body:</strong>
+    <%= @question.body %>
+  </p>
+<% end %>
+
+
+<h3>Submit a new answer:</h3>
