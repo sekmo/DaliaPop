@@ -112,9 +112,22 @@ h1, h2 {
   }
 }
 
+.error-explanation {
+  background: $error-color;
+  color: white;
+
+  & > ul {
+    margin-bottom: 0;
+  }
+}
+
 .field_with_errors{
   display: inline;
-  color: tomato;
+  color: $error-color;
+
+  & > .form-control {
+    border-color: $error-color;
+  }
 }
 
 div.flash {
