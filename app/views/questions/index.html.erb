@@ -13,7 +13,7 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= link_to question.title, question %></td>
+        <td><%= link_to question.title, question %> (<%= question.answers.size %> answers)</td>
         <td><%= question.category.name %></td>
       </tr>
     <% end %>

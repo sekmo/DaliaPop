@@ -22,3 +22,19 @@
 
 
 <h3>Submit a new answer:</h3>
+<%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
+
+<br>
+
+<% if @question.answers.any? %>
+  <h2>Answers</h2>
+  <% @question.answers.each do |answer| %>
+    <div class="answer">
+      <p class="answer-info">User <%= answer.user.id %> - <%= answer.created_at.localtime %></p>
+      <p class="answer-body">
+        <%= answer.body %>
+      </p>
+    </div>
+    <br>
+  <% end %>
+<% end  %>
