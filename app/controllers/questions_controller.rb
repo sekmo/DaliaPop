@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    @question = Question.new(category_id: params[:category_id])
   end
 
   def edit
