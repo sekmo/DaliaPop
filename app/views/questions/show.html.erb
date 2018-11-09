@@ -8,8 +8,10 @@
   Published in <strong><%= @question.category.name %></strong>
 
   <% if @question.user == current_user %>
+    <span class="small ml-1">
     <%= link_to 'Edit question', edit_question_path(@question) %> |
     <%= link_to 'Delete question', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </span>
   <% end %>
 </p>
 
@@ -29,11 +31,12 @@
 <% if @question.answers.any? %>
   <h2>Answers</h2>
   <% @question.answers.each do |answer| %>
-    <div class="answer">
-      <p class="answer-info">User <%= answer.user.id %> - <%= answer.created_at.localtime %></p>
-      <p class="answer-body">
-        <%= answer.body %>
-      </p>
+    <div class="answer border rounded">
+      <p class="answer-body"><%= answer.body %></p>
+      <span class="small">User <%= answer.user.id %> - <%= "#{time_ago_in_words(answer.created_at.localtime)} ago" %></span>
+      <% if current_user == answer.user %>
+        <span class="small ml-1"><%= link_to 'Edit', edit_answer_path(answer) %> | <%= link_to 'Delete', answer, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      <% end %>
     </div>
     <br>
   <% end %>
