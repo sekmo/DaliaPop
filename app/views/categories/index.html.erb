@@ -7,9 +7,8 @@
   <div class="col-sm-4">
     <div class="card category">
       <div class="card-body">
-        <h5><%= link_to category.name, category_path(category.id) %> (<%= category.questions.size %>)</h5>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <h5><%= link_to category.name, category_path(category.id) %></h5>
+        <p class="small"><%= pluralize(category.questions.size, "question") %></p>
       </div>
     </div>
   </div>
