@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Back', question_path(@answer.question) %>
+
+<h3>Edit answer</h3>
+
+<%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
